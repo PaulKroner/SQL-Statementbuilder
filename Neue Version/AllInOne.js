@@ -259,6 +259,7 @@ function selectChoice() {
     var wertEingabeBedingungenI = document.querySelector("#wertEingabeFelderInsert").value;
 
     // für zusätzliche Bedingungen
+    
     // prüfen, wie viele zusätzliche Bedingungen hinzugefügt wurden
 
     var zählerSelectAdd = document.querySelectorAll('[data-select-add]');
