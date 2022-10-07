@@ -259,30 +259,32 @@ function selectChoice() {
     var wertEingabeBedingungenI = document.querySelector("#wertEingabeFelderInsert").value;
 
     // für zusätzliche Bedingungen
-    
     // prüfen, wie viele zusätzliche Bedingungen hinzugefügt wurden
 
     var zählerSelectAdd = document.querySelectorAll('[data-select-add]');
     var zählerOperatorAdd = document.querySelectorAll('[data-operator-add]');
     var zählerValueAdd = document.querySelectorAll('[data-value-add]');
 
+
     for (let i = 1; i <= zählerSelectAdd.length; i++) {
+        // Prüfen, ob eines der Felder leer ist
+
+
         let x = document.querySelectorAll('[data-select-add = "'+ i +'"]')[0];
         let xx = x.options[x.selectedIndex]?.text ?? "";
-        console.log(xx);
 
         // Ausgabe Inhalt der zusätzlichen Operator-Felder
         let y = document.querySelectorAll('[data-operator-add = "'+ i +'"]')[0];
         let yy = y.options[y.selectedIndex]?.text ?? "";
-        console.log(yy);
 
         // Ausgabe Inhalt der zusätzlichen Werte-Felder
         let z = document.querySelector('[data-value-add = "'+ i +'"]').value;
-        console.log(z);
 
-        // hier muss noch was passieren
-        //
-        //
+        if (xx || yy || z == "") {
+            i = zählerSelectAdd.length + 1;
+            console.log("ein Feld ist leer!")
+        }
+
         console.log(`${xx} ${yy} ${z} AND `);
     }
     // let zählerAdd = 1;
