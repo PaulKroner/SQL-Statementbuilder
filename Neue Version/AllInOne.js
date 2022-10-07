@@ -279,13 +279,14 @@ function selectChoice() {
 
         // Ausgabe Inhalt der zusätzlichen Werte-Felder
         let z = document.querySelector('[data-value-add = "'+ i +'"]').value;
+        
+        console.log(`${xx} ${yy} ${z} AND `);
 
-        if (xx || yy || z == "") {
-            i = zählerSelectAdd.length + 1;
-            console.log("ein Feld ist leer!")
+        let test = "222";
+        if (test == "") {
+            console.log("variable ist leer!")
         }
 
-        console.log(`${xx} ${yy} ${z} AND `);
     }
     // let zählerAdd = 1;
     // while (document.querySelectorAll('[data-select-add = "'+ zählerAdd +'"]')[0] !== "") {
