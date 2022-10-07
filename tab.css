@@ -1,0 +1,255 @@
+/* CSS für die Tabgestaltung und Inhaltsgestaltung*/
+:root{
+  /* ===== Farben und deren Variablen ===== */
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #009879;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+  --button-schrift-color: black;
+  --button-color: #F6F5FF;
+  --tabcontent-color: #c6e4ff;
+}
+body.dark {
+  --button-color: #707070;
+  --button-schrift-color: #F6F5FF;
+  --tabcontent-color: #3a3b3c;
+}
+body {
+    height: 100%;
+}
+/* Style the tab */
+.main {
+    margin-left: 82px;
+}
+
+.tab {
+  overflow: hidden;
+  background-color: transparent;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  align-content: space-around;
+}  
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: var(--button-color);
+  color: var(--button-schrift-color);
+  border-color: var(--primary-color-light);
+  border-radius: 6px;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  min-width: 120px;
+  font-weight: 450;
+}
+  
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: var(--primary-color);
+  color: var(--sidebar-color);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--primary-color);
+  border: 2px solid #00745d;
+  color: var(--button-schrift-color)
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: var(--tabcontent-color);
+  min-height: 100%;
+}
+/*Listenfelder*/
+.tabellennamen {
+  border-color: black;
+  padding: 5px;
+  font-size: 15px;
+  height: 270px;
+  margin: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.infofelder {
+  background-color: white;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: auto;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+  
+.werte {
+  margin: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+}
+  
+.operator{
+  margin: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 200px;
+  height: 27px;
+}
+  
+.statementAusgabefeld {
+  margin-left: 10%;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.statementbuttons1 {
+  margin-left: 5%;
+  margin-top: 10px;
+  background-color: #009879;
+  /*height: 35px;*/
+  height: 30px;
+  width: 270px;
+  cursor: pointer;
+  border: 2px solid #00745d;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+.statementbuttons2 {
+  margin-left: 5%;
+  margin-top: 55px;
+  background-color: #009879;
+  /*height: 35px;*/
+  height: 30px;
+  width: 270px;
+  cursor: pointer;
+  border: 2px solid #00745d;
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+
+.statementbuttons1:hover {
+  background-color: rgba(68, 108, 240, 0.74);
+}
+.statementbuttons2:hover {
+  background-color: rgba(68, 108, 240, 0.74);
+}
+.statementInfofeld{
+  background-color: white;
+  padding: 5px;
+  font-size: 0.95em;
+  margin-top: 20px;
+  margin-left: 10%;
+  height: auto;
+  text-align: center;
+}
+
+.zweiMalDreiSpalten {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+}
+.linksoben{
+  grid-column: 1;
+  grid-row: 1;
+}
+.linksunten{
+  grid-column: 1;
+  grid-row: 2;
+}
+.mitteoben {
+  grid-column: 2;
+  grid-row: 1;
+}
+.mitteunten{
+  grid-column: 2;
+  grid-row: 2;
+}
+.rechtsoben{
+  grid-column: 3;
+  grid-row: 1;
+}
+.rechtsunten{
+  grid-column: 3;
+  grid-row: 2;
+}
+.ganzlinksunten{
+    grid-row: 3;
+    grid-column: 1;
+}
+.ganzmitteunten{
+    grid-row: 3;
+    grid-column: 2;
+}
+.ganzrechtsunten{
+    grid-row: 3;
+    grid-column: 3;
+}
+
+/* Fortschrittsbalken */
+.progress {
+    width:100%;
+    position:relative;
+    background-color:#f1f1f1;
+    width: 300px;
+    height: 30px;
+    border-style: solid;
+    border-color: #cccccc;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.progressbar {
+    background-color:#009879;
+    height:100%;
+    position:absolute;
+    line-height:inherit;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.round-xlarge {
+    border-radius:4px;
+}
+
+.resetbutton {
+    background-color: #009879;
+    height: 30px;
+    width: 270px;
+    cursor: pointer;
+    border: 2px solid #00745d;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-top: -150px;
+}
+
+.history {
+    border-color: black;
+    padding: 5px;
+    font-size: 15px;
+    max-width: 600px;
+    height: 500px;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}

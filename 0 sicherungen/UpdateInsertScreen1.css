@@ -1,0 +1,67 @@
+/* CSS für Update/Insert */
+.importbutton {
+  font-size: 18px;
+  width: 125px;
+  height: 75px;
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 3%;
+  background-color: rgba(178, 229, 245, 0.788);
+  cursor: pointer;
+}
+.importbutton:hover {
+  background-color: rgba(68, 108, 240, 0.74);
+}
+.importinfofeld {
+  background-color: white;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 3%;
+  margin-right: 10%;
+  height: 55px;
+  text-align: center;
+}
+
+/*Listenfelder*/
+.updateInsert {
+  border-color: black;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.file-upload__input {
+  display: none;
+}
+.file-upload__button {
+  -webkit-appearance: none;
+  background: #009879;
+  border: 2px solid #00745d;
+  border-radius: 4px;
+  outline: none;
+  padding: 0.5em 0.8em;
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+.file-upload__button:active {
+  background: #00745d;
+}
+.file-upload__label {
+  width: 250px;
+  overflow: hidden;
+  font-size: 0.95em;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 170px;
+  margin-top: 30px;
+}
+
+/* Grid-Aufteilungen*/
+.import {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:  auto 1fr 1fr;
+}

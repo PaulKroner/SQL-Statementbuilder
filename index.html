@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    Startseite des SB, soll Auswahl zwischen SELECT und 
+    UPDATE bzw. INSERT bieten
+    SB Startseite.css und SB Startseite.js sind einzubinden
+  -->
+  <head>
+    <meta name="description" content="SQL Statementbuilder Startseite">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css;" href="index.css">
+    <title>SQL Statementbuilder Startseite</title>
+    <link rel="icon" type="image/x-icon" href="pictures/SB_Logo.JPG">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+  </head>
+<body>
+    <div class="kopfzeile">
+      <button class="login-button" onclick="window.location.href = 'Login/login.php'">Login</button>
+    </div>
+    <div class="obererBlock">
+      <div class="uberschrift">Was möchten Sie tun?</div>
+      <!--<p>mein erster Absatz</p>-->
+    </div>
+    <div class="knöpfe">
+      <button class="button" onclick="window.location.href = 'SelectScreen/SelectScreen.php'">SELECT - sie wollen Daten auswählen</button>
+      <button class="button" onclick="window.location.href = 'INSERTScreen/InsertScreen.php'">INSERT - sie wollen Daten ins PMA eintragen</button>
+      <button class="button" onclick="window.location.href = 'UPDATEScreen/UpdateScreen.php'">UPDATE - sie wollen Daten aktualisieren</button>
+      <button class="button" onclick="window.location.href = 'Neue Version/AllInOne.php'">Neue Version - SB 2.0</button>
+    </div>
+    <div>
+      <button class="button" onclick="window.location.href = 'testdata/test.php'">Testbereich</button>
+    </div>
+
+  <div class="footer">
+    <div class="light-dark">
+      <div class="mode">
+          <div class="sun-moon">
+              <i class='bx bx-moon icon moon'></i>
+              <i class='bx bx-sun icon sun'></i>
+          </div>
+          <span class="mode-text text">Dark mode</span>
+  
+          <div class="toggle-switch">
+              <span class="switch"></span>
+          </div>
+      </div>
+    </div>
+  
+    <script src="index.js"></script>
+    <!-- Bilder mit Leerzeichen im Namen bekommen automatisch "_" bei w3 aber NICHT in VSC-->
+    <a href="https://www.gisa.de/">
+      <img alt="Gisa_Logo" class="unteresBild" src="pictures/GISA_Logo.jpg">
+   </a>
+  </div>
+</body>
+</html>

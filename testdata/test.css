@@ -1,0 +1,63 @@
+.testfelddings {
+    width: 200px;
+    height: 100px;
+}
+
+/* Fortschrittsbalken */
+/* .progress {
+    background-color: red;
+    width: 200px;
+    height: 50px;
+} */
+
+.progress {
+    width:100%;
+    height:1.5em;
+    position:relative;
+    background-color:#f1f1f1;
+    width: 300px;
+    height: 30px;
+    border-style: solid;
+    border-color: #cccccc;
+}
+.progressbar {
+    background-color:#009879;
+    height:100%;
+    position:absolute;
+    line-height:inherit;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.round-xlarge {
+    border-radius:4px;
+}
+
+.progressb{
+    width: 40px;
+    height: 40px;
+    color: green;
+
+}
+
+.testfeld {
+    border-color: #009879;
+    border-style: solid;
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    background-color: lightblue;
+}
+
+.fieldSelected {
+    margin-left: 10%;
+    margin-top: 65px;
+    max-width: 600px;
+    height: 500px;
+    background-color: white;
+    border-style: solid;
+    border-color: #cccccc;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}

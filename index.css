@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    /* ===== Farben und deren Variablen ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #009879;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+    --überschrift-color: #3a3b3c;
+    --button-schrift-color: #F6F5FF;
+    --border-color: #00745d;
+    --hover-color: #015847;
+
+    /* ====== Transition = Verschiebung in Sekunden, ease ist die Bewegungsart ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+body {
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/* Body im Darkmode*/
+body.dark{
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #009879;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --überschrift-color: #F6F5FF;
+    --button-schrift-color: #F6F5FF;
+    --border-color: #00745d;
+    --hover-color: #015847;
+}
+.uberschrift {
+    font-size: 35px;
+    font-weight: 1000;
+    color: var(--überschrift-color);
+}
+
+.kopfzeile {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    background-color: transparent;
+}
+.kopfzeile .login-button {
+    background-color: var(--primary-color);
+    color: var(--button-schrift-color);
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 650;
+    font-size: 13px;
+}
+.kopfzeile .login-button:active {
+    transform: scale(0.9);
+}
+.kopfzeile .login-button:hover {
+    background-color: var(--hover-color);
+}
+
+.obererBlock {
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.footer .unteresBild {
+    padding-right: 5px;
+    padding-bottom: 5px;
+    height: 70px;
+    width: 126px;
+    border-radius: 6px;
+}
+
+.knöpfe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 130px;
+}
+.knöpfe .button {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: none;
+    color: var(--button-schrift-color);
+    padding: 15px 32px;
+    margin-top: 5%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+    cursor: pointer;
+    width: 350px;
+    height: 250px;
+    -webkit-box-shadow: 10px 12px 27px -5px #000000; 
+    box-shadow: 10px 12px 27px -5px #000000;
+}
+.button:hover{
+    background-color: var(--hover-color);
+}
+
+/* Light-Dark-Mode */
+.light-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.light-dark .icon{
+    min-width: 60px;
+    border-radius: 6px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.light-dark .text,
+.light-dark .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.light-dark .text{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+    text-align: center;
+    margin-top: 12px;
+}
+.light-dark .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+    height: 50px;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
+/* Sonnen- bzw. Mondsymbol wird versteckt oder angezeigt, je nach Modus */
+.mode .sun-moon i{
+    position: absolute;
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
+}
+/* Switch-Kasten*/
+.light-dark .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Switch-Symbol*/
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
+/* Punkt im Switch*/
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
+/* Punkt im Darkmode*/
+body.dark .switch::before{
+    left: 20px;
+}
