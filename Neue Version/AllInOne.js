@@ -279,13 +279,15 @@ function selectChoice() {
 
         // Ausgabe Inhalt der zusätzlichen Werte-Felder
         let z = document.querySelector('[data-value-add = "'+ i +'"]').value;
-        
-        console.log(`${xx} ${yy} ${z} AND `);
 
-        let test = "222";
-        if (test == "") {
+
+        // Abbruchbedingung
+        if (xx == "" || yy == "-- Wählen Sie einen Operator aus --" || z == "") {
+            i = zählerSelectAdd.length + 1;
             console.log("variable ist leer!")
         }
+
+        console.log(`${xx} ${yy} ${z} AND `);
 
     }
     // let zählerAdd = 1;
