@@ -87,6 +87,10 @@ $('#add_bedingungen_button').on('click', function() {
     var select = document.getElementById('tabellenAuswahl');
     var tableAuswahl = select.options[select.selectedIndex]?.text ?? "";
 
+    // bereits hinzugefügte SelectAdds zählen
+    var zählerSelectAdd = document.querySelectorAll('[data-select-add]');
+    var i = zählerSelectAdd.length;
+
     // für Auswahl ohne *
     if(tableAuswahl){
         $.ajax({
@@ -94,11 +98,11 @@ $('#add_bedingungen_button').on('click', function() {
             url: '/DB_Connection/anfrage_Bedingungen.php',
             data:'name='+tableAuswahl,
             success:function(html){
-                $('[data-select-add]').html(html);
+                $('[data-select-add = "'+ i +'"]').html(html);
             }
         });
     }else{
-        $('[data-field]').html('<option value="">Select Table first</option>');
+        $('[data-select-add]').html('<option value="">Select Table first</option>');
         alert("Fehler bei AJAX");
     }
 });

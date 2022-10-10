@@ -294,11 +294,6 @@ function selectChoice() {
         }
 
     }
-    // let zählerAdd = 1;
-    // while (document.querySelectorAll('[data-select-add = "'+ zählerAdd +'"]')[0] !== "") {
-    //     zählerAdd = zählerAdd + 1;
-    // }
-    // consolge.log(zählerAdd);
 
 
     if (statementtyp === "SELECT") {
