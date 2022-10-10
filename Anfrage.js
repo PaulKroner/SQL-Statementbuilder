@@ -85,7 +85,7 @@ $('#directButton').on('click', function() {
 $('#add_bedingungen_button').on('click', function() {
     //holt selected Wert und packt ihn in Variable zum übergeben
     var select = document.getElementById('tabellenAuswahl');
-    var tableAuswahl = select.options[select.selectedIndex].text;
+    var tableAuswahl = select.options[select.selectedIndex]?.text ?? "";
 
     // für Auswahl ohne *
     if(tableAuswahl){
@@ -99,6 +99,6 @@ $('#add_bedingungen_button').on('click', function() {
         });
     }else{
         $('[data-field]').html('<option value="">Select Table first</option>');
-        alert("Fehler bei AJAX")
+        alert("Fehler bei AJAX");
     }
 });

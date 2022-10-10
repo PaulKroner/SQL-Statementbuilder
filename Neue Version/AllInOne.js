@@ -267,9 +267,7 @@ function selectChoice() {
 
 
     for (let i = 1; i <= zählerSelectAdd.length; i++) {
-        // Prüfen, ob eines der Felder leer ist
-
-
+    // Ausgabe Inhalt der zusätzlichen Select-Felder
         let x = document.querySelectorAll('[data-select-add = "'+ i +'"]')[0];
         let xx = x.options[x.selectedIndex]?.text ?? "";
 
@@ -286,8 +284,14 @@ function selectChoice() {
             i = zählerSelectAdd.length + 1;
             console.log("variable ist leer!")
         }
-
-        console.log(`${xx} ${yy} ${z} AND `);
+        else {
+            if (i !== zählerSelectAdd.length) {
+                console.log(`${xx} ${yy} ${z} AND `);
+            }
+            else {
+                console.log(`${xx} ${yy} ${z}`);
+            }
+        }
 
     }
     // let zählerAdd = 1;
