@@ -265,7 +265,7 @@ function selectChoice() {
     var zählerOperatorAdd = document.querySelectorAll('[data-operator-add]');
     var zählerValueAdd = document.querySelectorAll('[data-value-add]');
 
-
+    const addBedingungen = [];
     for (let i = 1; i <= zählerSelectAdd.length; i++) {
     // Ausgabe Inhalt der zusätzlichen Select-Felder
         let x = document.querySelectorAll('[data-select-add = "'+ i +'"]')[0];
@@ -293,7 +293,18 @@ function selectChoice() {
             }
         }
 
+        // Inhalte in ein Array packen
+        
+        addBedingungen.push(xx,yy,z);
+
     }
+    // Durchlaufen des Arrays
+    if (addBedingungen !== 0) {
+        for (let j = 0; j < addBedingungen.length; j++) {
+            console.log(addBedingungen[j]);
+        }
+    }
+    
 
 
     if (statementtyp === "SELECT") {

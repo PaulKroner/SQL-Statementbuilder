@@ -14,8 +14,6 @@
     <link rel="stylesheet" type="text/css;" href="AllInOne.css">
     <link rel="icon" type="image/x-icon" href="../pictures/SB_Logo.JPG">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   </head>
 
 <body>
@@ -216,6 +214,5 @@
     <script src="add_bedingungen.js"></script>
     <script src="../Anfrage.js"></script>
     <script src="../DB_Connection/directSQL.js"></script>
-    <script src="testscript.js"></script>
 </body>
 </html>
