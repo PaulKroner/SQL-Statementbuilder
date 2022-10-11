@@ -265,7 +265,9 @@ function selectChoice() {
     var zählerOperatorAdd = document.querySelectorAll('[data-operator-add]');
     var zählerValueAdd = document.querySelectorAll('[data-value-add]');
 
+    // Array
     const addBedingungen = [];
+
     for (let i = 1; i <= zählerSelectAdd.length; i++) {
     // Ausgabe Inhalt der zusätzlichen Select-Felder
         let x = document.querySelectorAll('[data-select-add = "'+ i +'"]')[0];
@@ -285,23 +287,21 @@ function selectChoice() {
             console.log("variable ist leer!")
         }
         else {
-            if (i !== zählerSelectAdd.length) {
-                console.log(`${xx} ${yy} ${z} AND `);
-            }
-            else {
-                console.log(`${xx} ${yy} ${z}`);
-            }
+            addBedingungen.push(xx,yy,z);
+
+            // soooo nicht
+            var addBedingungenSpeicher = addBedingungen.join(' ');
+            var zwischenspeicher = "";
+            console.log(addBedingungenSpeicher.concat(" AND ", zwischenspeicher));
+            addBedingungenSpeicher = "";
         }
-
-        // Inhalte in ein Array packen
         
-        addBedingungen.push(xx,yy,z);
-
     }
     // Durchlaufen des Arrays
     if (addBedingungen !== 0) {
         for (let j = 0; j < addBedingungen.length; j++) {
             console.log(addBedingungen[j]);
+            document.getElementById("testfeld").value = addBedingungen.join(' ');
         }
     }
     
