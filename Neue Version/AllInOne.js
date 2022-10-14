@@ -310,7 +310,6 @@ function selectChoice() {
     // addCondition gibt Wert zurück -> wird in Variable gespeichert
     // Variable heißt hier gleich
     var addBedingungenSpeicher = addCondition();
-    document.getElementById("testtest").value = addBedingungenSpeicher;
 
 
     if (statementtyp === "SELECT") {
