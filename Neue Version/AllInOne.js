@@ -241,10 +241,7 @@ $('#order-by').on('change', function() {
 function addCondition() {
     // für zusätzliche Bedingungen
     // prüfen, wie viele zusätzliche Bedingungen hinzugefügt wurden
-
     var zählerSelectAdd = document.querySelectorAll('[data-select-add]');
-    var zählerOperatorAdd = document.querySelectorAll('[data-operator-add]');
-    var zählerValueAdd = document.querySelectorAll('[data-value-add]');
 
     // Array
     const addBedingungen = [];
@@ -265,7 +262,7 @@ function addCondition() {
         // Abbruchbedingung
         if (xx == "" || yy == "-- Wählen Sie einen Operator aus --" || z == "") {
             i = zählerSelectAdd.length + 1;
-            console.log("variable ist leer!")
+            // console.log("variable ist leer!")
         }
         else {
             addBedingungen.push(xx,yy,z);
@@ -283,7 +280,7 @@ function addCondition() {
         }    
     }
 
-    console.log('Ergebnis ist: ', addBedingungenSpeicher);
+    // console.log('Ergebnis ist: ', addBedingungenSpeicher);
 
     return addBedingungenSpeicher;
 }
@@ -313,12 +310,7 @@ function selectChoice() {
     // addCondition gibt Wert zurück -> wird in Variable gespeichert
     // Variable heißt hier gleich
     var addBedingungenSpeicher = addCondition();
-    if (addBedingungenSpeicher !== undefined) {
-        console.log(addBedingungenSpeicher);
-    } 
-    else {
-        console.log("Variable ist undefined");
-    }
+    document.getElementById("testtest").value = addBedingungenSpeicher;
 
 
     if (statementtyp === "SELECT") {
@@ -328,16 +320,22 @@ function selectChoice() {
         else if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && bedingungenInhalt == "" || (operatorBedingungenInhalt == "-- Wählen Sie einen Operator aus --" || wertEingabeBedingungen == "")) {
             document.getElementById("ausgabeStatement").value = `SELECT ${felderauswahlInhalt} FROM ${zieltabelleInhalt}`;
         }
-        else if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && bedingungenInhalt !== ""  &&  operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "") {
+        else if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && bedingungenInhalt !== ""  &&  operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "" && addBedingungenSpeicher == undefined) {
             document.getElementById("ausgabeStatement").value = `SELECT ${felderauswahlInhalt} FROM ${zieltabelleInhalt} WHERE ${bedingungenInhalt} ${operatorBedingungenInhalt} ${wertEingabeBedingungen}`;
+        }
+        else if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && bedingungenInhalt !== ""  &&  operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "" && addBedingungenSpeicher !== undefined) {
+            document.getElementById("ausgabeStatement").value = `SELECT ${felderauswahlInhalt} FROM ${zieltabelleInhalt} WHERE ${bedingungenInhalt} ${operatorBedingungenInhalt} ${wertEingabeBedingungen} AND ${addBedingungenSpeicher}`;
         }
         else {
             document.getElementById("ausgabeStatement").value = "";
         }
     }
     else if (statementtyp === "UPDATE") {
-        if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && wertEingabeFelder !== "" && bedingungenInhalt !== "" && operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "") {
+        if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && wertEingabeFelder !== "" && bedingungenInhalt !== "" && operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "" && addBedingungenSpeicher == undefined) {
             document.getElementById("ausgabeStatement").value = `UPDATE ${zieltabelleInhalt} SET ${felderauswahlInhalt} = ${wertEingabeFelder} WHERE ${bedingungenInhalt} ${operatorBedingungenInhalt} ${wertEingabeBedingungen}`;
+        }
+        else if (zieltabelleInhalt !== "" && felderauswahlInhalt !== "" && wertEingabeFelder !== "" && bedingungenInhalt !== "" && operatorBedingungenInhalt !== "-- Wählen Sie einen Operator aus --" && wertEingabeBedingungen !== "" && addBedingungenSpeicher !== undefined) {
+            document.getElementById("ausgabeStatement").value = `UPDATE ${zieltabelleInhalt} SET ${felderauswahlInhalt} = ${wertEingabeFelder} WHERE ${bedingungenInhalt} ${operatorBedingungenInhalt} ${wertEingabeBedingungen} AND ${addBedingungenSpeicher}`;
         }
         else {
             document.getElementById("ausgabeStatement").value == "";
