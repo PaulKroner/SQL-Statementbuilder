@@ -205,7 +205,6 @@
             </div>
 
             <button class="statementbuttons1" onclick="testCounter()">TestCounter()</button>
-            <input type="text" id="testfeld">
 
         </div>
     </section>

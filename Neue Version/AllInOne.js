@@ -285,14 +285,7 @@ function addCondition() {
 
     console.log('Ergebnis ist: ', addBedingungenSpeicher);
 
-
-    // Durchlaufen des Arrays
-    if (addBedingungen !== 0) {
-        for (let j = 0; j < addBedingungen.length; j++) {
-            console.log(addBedingungen[j]);
-            document.getElementById("testfeld").value = addBedingungen.join(' ');
-        }
-    }
+    return addBedingungenSpeicher;
 }
 
 
@@ -316,6 +309,16 @@ function selectChoice() {
     var zieltabelleInhaltI = better_get("tabellenAuswahlInsert");
     var bedingungenInhaltI = better_get("felderAuswahlInsert");
     var wertEingabeBedingungenI = document.querySelector("#wertEingabeFelderInsert").value;
+
+    // addCondition gibt Wert zurück -> wird in Variable gespeichert
+    // Variable heißt hier gleich
+    var addBedingungenSpeicher = addCondition();
+    if (addBedingungenSpeicher !== undefined) {
+        console.log(addBedingungenSpeicher);
+    } 
+    else {
+        console.log("Variable ist undefined");
+    }
 
 
     if (statementtyp === "SELECT") {
