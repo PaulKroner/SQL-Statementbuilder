@@ -237,27 +237,8 @@ $('#order-by').on('change', function() {
 });
 
 
-function selectChoice() {
-    // Statementtyp speichern
-    let statementtyp = better_get("StatementAuswahl");
-    // select Felder
-    var zieltabelleInhalt = better_get("tabellenAuswahl");
-    var felderauswahlInhalt = better_get("felderAuswahl");
-    var bedingungenInhalt = better_get("bedingungenTabelle");
-    var operatorBedingungenInhalt = better_get("operatorBedingungen");
-    var wertEingabeBedingungen = document.querySelector("#werteingabeBedingungen").value;
-    // update Felder
-    var zieltabelleInhalt = better_get("tabellenAuswahl");
-    var felderauswahlInhalt = better_get("felderAuswahl");
-    var wertEingabeFelder= document.querySelector("#wertEingabeFelder").value;
-    var bedingungenInhalt = better_get("bedingungenTabelle");
-    var operatorBedingungenInhalt = better_get("operatorBedingungen");
-    var wertEingabeBedingungen = document.querySelector("#werteingabeBedingungen").value;
-    // insert Felder
-    var zieltabelleInhaltI = better_get("tabellenAuswahlInsert");
-    var bedingungenInhaltI = better_get("felderAuswahlInsert");
-    var wertEingabeBedingungenI = document.querySelector("#wertEingabeFelderInsert").value;
 
+function addCondition() {
     // für zusätzliche Bedingungen
     // prüfen, wie viele zusätzliche Bedingungen hinzugefügt wurden
 
@@ -289,14 +270,22 @@ function selectChoice() {
         else {
             addBedingungen.push(xx,yy,z);
 
-            // soooo nicht
-            var addBedingungenSpeicher = addBedingungen.join(' ');
-            var zwischenspeicher = "";
-            console.log(addBedingungenSpeicher.concat(" AND ", zwischenspeicher));
-            addBedingungenSpeicher = "";
-        }
-        
+            if (i == 1) {
+                var addBedingungenSpeicher = addBedingungen.join(' ');
+            }
+            else {
+                var addBedingungenZweiterSpeicher = addBedingungen.join(' ');
+                addBedingungenSpeicher = addBedingungenSpeicher + ' AND ' + addBedingungenZweiterSpeicher;
+            }
+
+            addBedingungen.splice(0, addBedingungen.length);
+
+        }    
     }
+
+    console.log('Ergebnis ist: ', addBedingungenSpeicher);
+
+
     // Durchlaufen des Arrays
     if (addBedingungen !== 0) {
         for (let j = 0; j < addBedingungen.length; j++) {
@@ -304,7 +293,29 @@ function selectChoice() {
             document.getElementById("testfeld").value = addBedingungen.join(' ');
         }
     }
-    
+}
+
+
+function selectChoice() {
+    // Statementtyp speichern
+    let statementtyp = better_get("StatementAuswahl");
+    // select Felder
+    var zieltabelleInhalt = better_get("tabellenAuswahl");
+    var felderauswahlInhalt = better_get("felderAuswahl");
+    var bedingungenInhalt = better_get("bedingungenTabelle");
+    var operatorBedingungenInhalt = better_get("operatorBedingungen");
+    var wertEingabeBedingungen = document.querySelector("#werteingabeBedingungen").value;
+    // update Felder
+    var zieltabelleInhalt = better_get("tabellenAuswahl");
+    var felderauswahlInhalt = better_get("felderAuswahl");
+    var wertEingabeFelder= document.querySelector("#wertEingabeFelder").value;
+    var bedingungenInhalt = better_get("bedingungenTabelle");
+    var operatorBedingungenInhalt = better_get("operatorBedingungen");
+    var wertEingabeBedingungen = document.querySelector("#werteingabeBedingungen").value;
+    // insert Felder
+    var zieltabelleInhaltI = better_get("tabellenAuswahlInsert");
+    var bedingungenInhaltI = better_get("felderAuswahlInsert");
+    var wertEingabeBedingungenI = document.querySelector("#wertEingabeFelderInsert").value;
 
 
     if (statementtyp === "SELECT") {
