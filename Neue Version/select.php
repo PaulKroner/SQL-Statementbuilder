@@ -1,4 +1,7 @@
 <?php
+
+    // durch Add-Bedingung geht das hier nicht mehr
+
     //Verbindung zur DB einbinden
     include_once "../DB_Connection/dbLink.php";
    

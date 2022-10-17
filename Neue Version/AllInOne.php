@@ -179,8 +179,7 @@
             <!-- hier kommt selectiertes rein -->
             <div class="boxfield" id="SelectedDisplay">
                 <p class="statementInfofeld">Hier wird das Selektierte angezeigt.</p>
-                <div id="selectedFromDB" class="fieldSelected">
-                </div>
+                <div id="selectedFromDB" class="fieldSelected"></div>
 
                 <div class="sortierung">
                     <div>
