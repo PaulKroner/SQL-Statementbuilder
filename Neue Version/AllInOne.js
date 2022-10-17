@@ -2,7 +2,7 @@
 const body = document.querySelector('body'),
     icon_switch = document.querySelector('.light-dark-mode');
     icon_switch.addEventListener("click" , () =>{
-        body.classList.toggle("dark");
+    body.classList.toggle("dark");
 })
 
 
