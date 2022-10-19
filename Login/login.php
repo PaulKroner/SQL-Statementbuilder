@@ -30,7 +30,7 @@ if(isset($errorMessage)) {
   <!--
     Login
   -->
-  <head>
+<head>
     <meta name="description" content="SQL Statementbuilder Login">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +40,7 @@ if(isset($errorMessage)) {
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-  </head>
+</head>
 <body>
   <div class="kopfbereich">
     <button class="ohneLogin" id="ohneLogin">ohne Login weiter</button>
